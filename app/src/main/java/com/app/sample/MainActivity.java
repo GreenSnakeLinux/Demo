@@ -9,7 +9,7 @@ import android.widget.Toast;
 public class MainActivity extends Activity {
 
     public static final String EXTRA1 = "extra1";
-    int m_demo = 1;
+    int m_demo = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,6 @@ public class MainActivity extends Activity {
                 break;
 
             case 2:
-            default:
                 try {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setType(DocumentsContract.Document.MIME_TYPE_DIR);
@@ -35,6 +34,9 @@ public class MainActivity extends Activity {
                     e.printStackTrace();
                     Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
                 }
+                break;
+
+            default:
                 break;
         }
     }
